@@ -1,0 +1,58 @@
+# 📝 Wisker - To-Do Application
+
+Wisker is a simple yet powerful **To-Do List application** built with **Java Spring Boot**.
+It allows users to manage daily tasks efficiently — add, update, delete, and mark tasks as completed — all through a clean and responsive interface.
+
+---
+
+## 🚀 Features
+
+- ➕ Create new tasks
+- ✅ Mark tasks as completed or pending
+- 🗑️ Delete tasks
+- ✏️ Edit existing tasks
+- 📅 View all tasks in a structured list
+- ⚙️ RESTful API endpoints for CRUD operations
+- 🧩 Clean architecture using MVC pattern
+
+---
+
+## 🧠 Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| Backend | Java, Spring Boot |
+| Database | MySQL /  MongoDB Atlas|
+| Build Tool | Maven|
+| Frontend | Simple HTML |
+| API Testing | Postman |
+| Deployment | Localhost / Docker / Vercel  / AWS / Render |
+
+---
+
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/wisker.git
+cd wisker
+
+### 2. Application Properties
+
+spring.datasource.url=jdbc:mysql://localhost:3306/wisker_db
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+
+### 3. Build and run the app
+
+mvn spring-boot:run
+
+ (or)
+
+./mvnw spring-boot:run
+
+### 4. Access the app
+
+http://localhost:8080
