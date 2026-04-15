@@ -1,0 +1,255 @@
+:root {
+    --bg: #f3f6ff;
+    --bg-gradient: radial-gradient(circle at top right, #dce8ff, #f7f9ff 60%);
+    --text: #1d2433;
+    --subtext: #6b7487;
+    --card: #ffffff;
+    --border: #dbe2f3;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --danger: #dc2626;
+    --shadow: 0 15px 35px rgba(31, 41, 55, 0.12);
+}
+
+:root[data-theme="dark"] {
+    --bg: #0f1320;
+    --bg-gradient: radial-gradient(circle at top right, #1f2a44, #0f1320 60%);
+    --text: #f2f5ff;
+    --subtext: #a7b1c8;
+    --card: #171e30;
+    --border: #2a3553;
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --danger: #f87171;
+    --shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: var(--bg-gradient);
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 36px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.topbar p {
+    color: var(--subtext);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+}
+
+.stat-card p {
+    color: var(--subtext);
+}
+
+.stat-card h3 {
+    margin: 6px 0 0;
+    font-size: 1.5rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) 1fr;
+    gap: 14px;
+}
+
+.panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+}
+
+.form-grid,
+.toolbar {
+    display: grid;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+input,
+textarea,
+select,
+button {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    padding: 10px 12px;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+.ghost-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.danger-btn {
+    background: var(--danger);
+}
+
+.task-list {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.task-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.task-card h3 {
+    margin: 0 0 6px;
+}
+
+.task-card p {
+    color: var(--subtext);
+    margin-bottom: 8px;
+}
+
+.task-card.done h3 {
+    text-decoration: line-through;
+    opacity: 0.75;
+}
+
+.actions {
+    display: grid;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--subtext);
+    font-size: 0.9rem;
+}
+
+.badge {
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badge.high {
+    background: rgba(220, 38, 38, 0.15);
+    color: #b91c1c;
+}
+
+.badge.medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: #b45309;
+}
+
+.badge.low {
+    background: rgba(34, 197, 94, 0.18);
+    color: #15803d;
+}
+
+.error {
+    color: #ef4444;
+    margin-top: 10px;
+}
+
+.muted {
+    color: var(--subtext);
+}
+
+@media (max-width: 850px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .task-card {
+        flex-direction: column;
+    }
+
+    .actions {
+        width: 100%;
+        min-width: 0;
+    }
+}
