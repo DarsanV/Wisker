@@ -18,11 +18,16 @@ public class wiskercontroller {
     }
 
     @GetMapping
+<<<<<<< HEAD
     public List<wiskermod> getall(
             @RequestParam(required = false) Boolean completed,
             @RequestParam(required = false) String query
     ){
         return service.getall(completed, query);
+=======
+    public List<wiskermod> getall(){
+        return service.getall();
+>>>>>>> 9a92dce10ece282b3b94ebd34df93cda675d1608
     }
 
     @GetMapping ("/{id}")

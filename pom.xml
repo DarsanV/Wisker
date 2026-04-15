@@ -41,7 +41,11 @@
 
         <dependency>
             <groupId>com.mysql</groupId>
+<<<<<<< HEAD
             <artifactId>mysql-connector-j</artifactId>
+=======
+            <artifactId> mysql-connector-j </artifactId>
+>>>>>>> 9a92dce10ece282b3b94ebd34df93cda675d1608
             <scope>runtime</scope>
         </dependency>
 
