@@ -2,17 +2,12 @@ package com.dev.wisker.service;
 
 import com.dev.wisker.model.wiskermod;
 import com.dev.wisker.repository.wiskerrepo;
-<<<<<<< HEAD
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Locale;
-=======
-import org.springframework.stereotype.Service;
-import java.util.List;
->>>>>>> 9a92dce10ece282b3b94ebd34df93cda675d1608
 
 @Service
 public class wiskerservice {
@@ -23,7 +18,6 @@ public class wiskerservice {
         this.repo = repo ;
     }
 
-<<<<<<< HEAD
     public List<wiskermod> getall(Boolean completed, String query) {
         if (query != null && !query.isBlank()) {
             String cleanQuery = query.trim();
@@ -85,40 +79,5 @@ public class wiskerservice {
         }
         mod.setPriority(normalized);
     }
-=======
-    public List<wiskermod>getall()
-    {
-        return repo.findAll();
-    }
-
-    public wiskermod getById(Long id)
-    {
-        return repo.findById(id).orElse(null);
-    }
-
-    public wiskermod create(wiskermod mod){
-        return repo.save(mod);
-    }
-
-    public wiskermod update(Long id , wiskermod updatedmod)
-    {
-        wiskermod exist = repo.findById(id).orElse(null);
-        if(exist != null)
-        {
-            exist.setTitle(updatedmod.getTitle());
-            exist.setDescription(updatedmod.getDescription());
-            exist.setCompleted(updatedmod.isCompleted());
-            return repo.save(exist);
-        }
-
-          return null;
-    }
-
-    public void delete(Long id)
-    {
-        repo.deleteById(id);
-    }
-
->>>>>>> 9a92dce10ece282b3b94ebd34df93cda675d1608
 
 }
